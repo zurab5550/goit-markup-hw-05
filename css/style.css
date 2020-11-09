@@ -21,6 +21,10 @@
   --akcent-color: #2196f3;
   --white-color: #ffffff;
 }
+:root {
+  --duration: 250ms;
+  --timming-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
 
 a {
   text-decoration: none;
@@ -229,6 +233,26 @@ body {
 .backdrop.is-hidden {
   opacity: 0;
   pointer-events: none;
+}
+
+.button-close {
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  position: absolute;
+}
+
+.button-close:hover .button-close-icon,
+.button-close:focus .button-close-icon {
+  fill: var(--akcent-color);
+}
+
+.button-close-icon {
+  transition: fill var(--duration) var(--timming-function);
 }
 
 .modal {
